@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>เว็บไซต์ของภาณุมาศ นนท์ไธสงค์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #edff78 0%, #fff700 20%, #fcb900 60%, #ff6900 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Charmonman', cursive;
+            transition: background 0.7s;
+        }
+         h1 {
+            color: #780b0b;
+            text-align: center;
+        }
+
+           img {
+            width: 150px;
+            /* กำหนดความกว้างของรูปภาพ */
+            height: 200px;
+            /* กำหนดความสูงของรูปภาพ */
+            border: 5px solid #fff389;
+            /* เพิ่มขอบสีฟ้าทึบขนาด 5px */
+            border-radius: 50%;
+            /* ทำให้รูปภาพเป็นวงกลม */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* เพิ่มเงาให้รูปภาพ */
+            display: block;
+            /* จัดให้รูปภาพอยู่คนละบรรทัดกับข้อความ */
+            margin: 20px auto;
+            /* จัดให้อยู่กึ่งกลางหน้าเว็บ */
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 24px auto 0 auto;
+            background: #fffcb9f7;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(255,217,66,0.21);
+        }
+        th, td {
+            border: 5px solid #ffffff;
+            padding: 12px 16px;
+            font-size: 1.08em;
+        }
+        th {
+            background: linear-gradient(90deg, #f6d608 70%, #ffe031 100%);
+            color: #564c00;
+            font-size: 1.12em;
+        }
+        tr:nth-child(even) {
+            background-color: #fff1bd;
+        }
+   
+        .rbox {
+            max-width: 380px;
+            background: rgba(255,255,255,0.86);
+            margin: 32px auto;
+            padding: 26px 0 18px 0;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 1px 10px 1px rgba(255,232,88,0.12);
+        }
+        #num {
+            font-size: 2.8em;
+            margin-top: 12px;
+            letter-spacing: 4px;
+            font-family:'Charmonman', cursive;
+            color: #ffd600;
+            text-shadow: 0 1px 6px #ff990085, 0 1px 1px #ffe873;
+        }
+        button {
+            background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+            color: #4d3703;
+            font-family: inherit;
+            padding: 12px 36px;
+            font-size: 1.15em;
+            border: none;
+            border-radius: 100px;
+            box-shadow: 0 1px 8px #ffd6004d;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.18s;
+            margin-bottom: 6px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #ffb347 0%, #feb47b 100%);
+            transform: scale(1.06);
+            box-shadow: 0 4px 16px #ffb80060;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>สวัสดีค่ะ! นี่คือหน้าเว็บแนะนำตัวของฉัน</h1>
+    <div class="profile-card">
+        <img src="mypic.jpg" alt="รูปภาพของฉัน" >
+        <h1>หน้าแนะนำตัวของฉัน</h1>
+        
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">ข้อมูลส่วนตัว</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>รหัสประจำตัว</td>
+                <td>683380089-3</td>
+            </tr>
+            <tr>
+                <td>ชื่อ</td>
+                <td>นางสาวภาณุมาศ นนท์ไธสงค์</td>
+            </tr>
+            <tr>
+                <td>อีเมล</td>
+                <td>phanumat.n@kkumail.com</td>
+            </tr>
+            <tr>
+                <td>ความสนใจ</td>
+                <td>อาหาร ดนตรีแนวร็อค และดอกไม้</td>
+            </tr>
+        </tbody>
+    </table>
+  <div class="rbox">
+        <button onclick="start_random()">กดเพื่อสุ่มตัวเลข 3 หลัก</button>
+        <div id="num">---</div>
+    </div>
+
+    <script>
+       let n = 0;
+        let numElem = document.getElementById("num");
+
+        function start_random(){
+            if(n>0) return;
+            n = 50;
+            next_number();
+        }
+        function next_number(){
+            var r =  Math.round(Math.random()*999)+"";
+            numElem.innerText = r.padStart(3,'0');
+            n--;
+            if(n>0){
+                setTimeout(next_number,150-n); 
+            }
+        }
+    </script>
+</body>
+</html>
